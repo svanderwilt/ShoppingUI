@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingUI.MVVM.Views.LoginPage"
+             Title="LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="bg" VerticalOptions="Fill" Aspect="Fill" /> 
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="User Name" FontSize="17" FontAttributes="Bold" TextColor="#2c363c"/>
+            <Frame Grid.Row="1" Grid.Column="0" HeightRequest="50" >
+                <Entry Text="{Binding Username}" BackgroundColor="White" HeightRequest="48" WidthRequest="200"/>
+
+            </Frame>
+            <Label Grid.Row="2" Grid.Column="0" Text="Password" FontSize="17" FontAttributes="Bold" TextColor="#2c363c"/>
+            <Frame Grid.Row="3" Grid.Column="0" HeightRequest="50" >
+                <Entry Text="{Binding Password}" BackgroundColor="White" IsPassword="True" HeightRequest="48" WidthRequest="200"/>
+
+            </Frame>
+            <Grid Grid.Row="4" Padding="0,40,0,0">
+
+
+                <VerticalStackLayout Spacing="20">
+                    <Button Text="Login" Command="{Binding LoginCommand}" Clicked="Button_Clicked" TextColor="White" HeightRequest="40" WidthRequest="100" BackgroundColor="#2c363c"/>
+                    <Button Text="Register" Command="{Binding RegisterCommand}" TextColor="White" HeightRequest="40" WidthRequest="100"
+                            BackgroundColor="#2c363c"/>
+
+                </VerticalStackLayout>
+            </Grid>
+
+
+        </Grid>
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

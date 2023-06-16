@@ -30,6 +30,12 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\bg.jpeg" />
+	</ItemGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -50,6 +56,38 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="MVVM\" />
+	  <None Remove="MVVM\Views\" />
+	  <None Remove="MVVM\Models\" />
+	  <None Remove="MVVM\ViewModels\" />
+	  <None Remove="Resources\Images\bg.jpeg" />
+	  <None Remove="Database\" />
+	  <None Remove="Resources\Images\wristwatch.png" />
+	  <None Remove="Resources\Images\watch.png" />
+	  <None Remove="Resources\Images\militarywatch.png" />
+	  <None Remove="Resources\Images\dresswatch.png" />
+	  <None Remove="Resources\Images\divingwatch.png" />
+	  <None Remove="Resources\Images\awatch.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="MVVM\" />
+	  <Folder Include="MVVM\Views\" />
+	  <Folder Include="MVVM\Models\" />
+	  <Folder Include="MVVM\ViewModels\" />
+	  <Folder Include="Database\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\bg.jpeg" />
+	  <BundleResource Include="Resources\Images\bg.jpeg" />
+	  <BundleResource Include="Resources\Images\wristwatch.png" />
+	  <BundleResource Include="Resources\Images\watch.png" />
+	  <BundleResource Include="Resources\Images\militarywatch.png" />
+	  <BundleResource Include="Resources\Images\dresswatch.png" />
+	  <BundleResource Include="Resources\Images\divingwatch.png" />
+	  <BundleResource Include="Resources\Images\awatch.png" />
+	</ItemGroup>
 </Project>
